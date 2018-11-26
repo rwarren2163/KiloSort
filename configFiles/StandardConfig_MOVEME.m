@@ -1,5 +1,5 @@
 % settings
-session = '181019_002';
+session = '181029_000';
 
 % initializations
 ephysInfo = getSessionEphysInfo(session);
