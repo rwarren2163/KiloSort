@@ -1,9 +1,13 @@
 % settings
-session = '181029_000';
+session = '180922_001';
 
 % initializations
 ephysInfo = getSessionEphysInfo(session);
 file = fullfile(getenv('OBSDATADIR'), 'sessions', session, ephysInfo.ephysFolder);
+ephysMetadata = readtable(fullfile(getenv('OBSDATADIR'), 'sessions', 'ephysInfo.xlsx'), 'Sheet', 'ephysInfo');
+analyzedSessions = ephysMetadata.session(strcmp(ephysMetadata.spikesSorted, 'yes')); % uncomment to reanalyze data that were already spike sorted
+if contains(session, analyzedSessions); disp('WARNING! THIS SESSION HAS ALREADY BEEN ANALYZED!'); keyboard; end
+
 
 clear ops
 ops.GPU                 = 1; % whether to run this code on an Nvidia GPU (much faster, mexGPUall first)		

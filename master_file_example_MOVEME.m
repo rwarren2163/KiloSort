@@ -1,4 +1,4 @@
- % default options are in parenthesis after the comment
+% default options are in parenthesis after the comment
 
 addpath(genpath('D:\github\KiloSort')) % path to kilosort folder
 addpath(genpath('D:\github\npy-matlab')) % path to npy-matlab scripts
